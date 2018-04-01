@@ -28,3 +28,8 @@ def make_dir(path, check_empty=False, force_empty=False, use_dirname=False):
     if check_empty and not is_empty:
         raise ValueError(
             '{} needs to be an empty directory!'.format(directory))
+
+
+def predict(batch, model):
+    # Apply same transform to input as when training.
+    return model.predict(batch / 255.0)
